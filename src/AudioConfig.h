@@ -334,11 +334,11 @@ typedef uint32_t eps32_i2s_sample_rate_type;
 
 #define PWM_FREQENCY 30000
 #define PIN_PWM_START 1
+#define PIN_I2S_BCK 8          // XIAO ESP32S3 GPIO8
+#define PIN_I2S_WS 7           // XIAO ESP32S3 GPIO7 (LCK)
+#define PIN_I2S_DATA_IN 44      // microphone GPIO44
+#define PIN_I2S_DATA_OUT 43     // speaker GPIO43
 #define PIN_I2S_MCK -1
-#define PIN_I2S_BCK 6
-#define PIN_I2S_WS 7
-#define PIN_I2S_DATA_OUT 8
-#define PIN_I2S_DATA_IN 9
 #define I2S_USE_APLL true  
 // Default Setting: The mute pin can be switched actovated by setting it to a gpio (e.g 5). Or you could drive the LED by assigning LED_BUILTIN
 #define PIN_I2S_MUTE -1

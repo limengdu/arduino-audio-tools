@@ -1,13 +1,10 @@
 /**
- * @file streams-generator-i2s.ino
- * @author Phil Schatzmann
- * @brief see https://github.com/pschatzmann/arduino-audio-tools/blob/main/examples/examples-stream/streams-generator-i2s/README.md 
- * @copyright GPLv3
+ * https://github.com/pschatzmann/arduino-audio-tools/tree/main
  */
- 
+
 #include "AudioTools.h"
 
-AudioInfo info(16000, 2, 32);
+AudioInfo info(16000, 2, 32);                              // Sample Rate, Number of channels: 2=stereo, 1=mono, Number of bits per sample (int16_t = 16 bits)
 SineWaveGenerator<int16_t> sineWave(32000);                // subclass of SoundGenerator with max amplitude of 32000
 GeneratedSoundStream<int16_t> sound(sineWave);             // Stream generated from sine wave
 I2SStream out; 
@@ -17,7 +14,6 @@ StreamCopy copier(out, sound);                             // copies sound into 
 void setup(void) {  
   // Open Serial 
   Serial.begin(115200);
-  while(!Serial);
   AudioLogger::instance().begin(Serial, AudioLogger::Info);
 
   // start I2S
