@@ -7,7 +7,7 @@
 
 #include "AudioTools.h"
  
-AudioInfo info(44100, 2, 16);
+AudioInfo info(16000, 2, 32);
 I2SStream i2s;
 StreamCopy copier(i2s, i2s); // copies sound into i2s
 
@@ -24,10 +24,10 @@ void setup(void) {
   auto config = i2s.defaultConfig(RXTX_MODE);
   config.copyFrom(info); 
   config.i2s_format = I2S_STD_FORMAT;
-  config.pin_ws = 14;
-  config.pin_bck = 15;
-  config.pin_data = 18;
-  config.pin_data_rx = 19;
+  // config.pin_ws = 14;
+  // config.pin_bck = 15;
+  // config.pin_data = 18;
+  // config.pin_data_rx = 19;
   //config.fixed_mclk = sample_rate * 256;
   // config.pin_mck = 3; // must be 0,1 or 3 - only for ESP_IDF_VERSION_MAJOR >= 4
   i2s.begin(config);

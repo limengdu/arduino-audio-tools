@@ -95,7 +95,7 @@
 #endif
 
 #ifndef DEFAULT_SAMPLE_RATE 
-#  define DEFAULT_SAMPLE_RATE 44100
+#  define DEFAULT_SAMPLE_RATE 16000
 #endif
 
 #ifndef DEFAULT_CHANNELS 
@@ -103,7 +103,7 @@
 #endif
 
 #ifndef DEFAULT_BITS_PER_SAMPLE 
-#  define DEFAULT_BITS_PER_SAMPLE 16
+#  define DEFAULT_BITS_PER_SAMPLE 32
 #endif
 
 #ifndef I2S_DEFAULT_PORT 
@@ -266,10 +266,10 @@
 
 #define PWM_FREQENCY 30000
 #define PIN_PWM_START 12
-#define PIN_I2S_BCK 14
-#define PIN_I2S_WS 15
-#define PIN_I2S_DATA_IN 32
-#define PIN_I2S_DATA_OUT 22
+#define PIN_I2S_BCK 8          // XIAO ESP32S3 GPIO8
+#define PIN_I2S_WS 7           // XIAO ESP32S3 GPIO7 (LCK)
+#define PIN_I2S_DATA_IN 44      // microphone GPIO44
+#define PIN_I2S_DATA_OUT 43     // speaker GPIO43
 #define PIN_I2S_MCK -1
 #define I2S_USE_APLL true  
 // Default Setting: The mute pin can be switched actovated by setting it to a gpio (e.g 23). Or you could drive the LED by assigning LED_BUILTIN

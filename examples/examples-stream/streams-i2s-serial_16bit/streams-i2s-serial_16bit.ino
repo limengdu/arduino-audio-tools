@@ -10,7 +10,7 @@
 
 #include "AudioTools.h"
 
-AudioInfo info(44100, 2, 16);
+AudioInfo info(16000, 2, 32);
 I2SStream i2sStream; // Access I2S as stream
 CsvOutput<int16_t> csvStream(Serial);
 StreamCopy copier(csvStream, i2sStream); // copy i2sStream to csvStream
