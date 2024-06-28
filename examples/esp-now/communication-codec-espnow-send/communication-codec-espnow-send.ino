@@ -12,9 +12,9 @@
 #include "Communication/ESPNowStream.h"
 #include "AudioCodecs/CodecSBC.h"
 
-AudioInfo info(32000,1,16);
-SineWaveGenerator<int16_t> sineWave( 32000);  // subclass of SoundGenerator with max amplitude of 32000
-GeneratedSoundStream<int16_t> sound( sineWave); // Stream generated from sine wave
+AudioInfo info(16000, 1, 32);
+SineWaveGenerator<int16_t> sineWave(32000);  // subclass of SoundGenerator with max amplitude of 32000
+GeneratedSoundStream<int16_t> sound(sineWave); // Stream generated from sine wave
 ESPNowStream now;
 SBCEncoder sbc;
 EncodedAudioStream encoder(&now, &sbc); // encode and write to ESP-now
