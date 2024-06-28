@@ -21,13 +21,13 @@
 const char* ssid = "SSID";    // your network SSID (name)
 const char* password = "PASSWORD";    // your network password (use for WPA, or use as key for WEP)
 const char* broker = "test.mosquitto.org"; 
-const char* topic  = "audio.wav";
-int        port     = 1883;
+const char* topic = "audio.wav";
+int port = 1883;
 WiFiClient wifiClient;
 MqttClient mqttClient(wifiClient);
 
 // Audio
-AudioInfo info(8000, 1, 16);
+AudioInfo info(16000, 1, 32);
 WhiteNoiseGenerator<int16_t> noise(32000);                        // subclass of SoundGenerator with max amplitude of 32000
 GeneratedSoundStream<int16_t> in_stream(noise);                   // Stream generated from noise
 EncodedAudioStream out_stream(&mqttClient, new WAVEncoder());     // encode as wav file
@@ -54,7 +54,7 @@ void connectWIFI() {
 void connectMQTT() {
   // You can provide a unique client ID, if not set the library uses Arduino-millis()
   // Each client must have a unique client ID
-  mqttClient.setId("AudioTools");
+  mqttClient.setId("reSpeaker");
 
   // You can provide a username and password for authentication
   // mqttClient.setUsernamePassword("username", "password");
@@ -109,5 +109,5 @@ void loop() {
   // call poll() regularly to allow the library to send MQTT keep alives which
   // avoids being disconnected by the broker
   mqttClient.poll();
-  delay(1000);
+  delay(10000);
 }
