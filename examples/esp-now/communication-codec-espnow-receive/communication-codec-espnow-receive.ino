@@ -1,6 +1,7 @@
 /**
- * @file example-serial-receive.ino
+ * @file communication-codec-espnow-receive.ino
  * @author Phil Schatzmann
+ * @modifier Seeed Studio
  * @brief Receiving audio via ESPNow and decoding data to I2S 
  * @version 1.0
  * @date 2024.06.28

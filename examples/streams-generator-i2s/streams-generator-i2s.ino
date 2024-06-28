@@ -1,5 +1,12 @@
 /**
- * https://github.com/pschatzmann/arduino-audio-tools/tree/main
+ * @file streams-generator-i2s.ino
+ * @author Phil Schatzmann
+ * @modifier Seeed Studio
+ * @brief Sending analogue acoustic signals via I2S.
+ * @version 1.0
+ * @date 2024-06-28
+ * 
+ * @copyright Copyright (c) 2024
  */
 
 #include "AudioTools.h"

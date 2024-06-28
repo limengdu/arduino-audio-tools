@@ -1,11 +1,12 @@
 /**
  * @file streams-i2s-tf.ino
  * @author Phil Schatzmann
+ * @modifier Seeed Studio
  * @brief We read audio data from a I2S Microphone and send it to Tensorflow Lite to recognize the words yes and no
- * @version 0.1
- * @date 2022-04-07
+ * @version 1.0
+ * @date 2024-06-28
  * 
- * @copyright Copyright (c) 2022
+ * @copyright Copyright (c) 2024
  * 
  */
 

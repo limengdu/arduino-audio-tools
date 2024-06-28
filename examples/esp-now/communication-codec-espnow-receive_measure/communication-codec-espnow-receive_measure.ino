@@ -1,11 +1,12 @@
 /**
  * @file example-serial-receive_measure.ino
  * @author Phil Schatzmann
+ * @modifier Seeed Studio
  * @brief Receiving audio via ESPNow with max speed to measure thruput
- * @version 0.1
- * @date 2022-03-09
+ * @version 1.0
+ * @date 2024-06-28
  * 
- * @copyright Copyright (c) 2022
+ * @copyright Copyright (c) 2024
  * 
  */
 

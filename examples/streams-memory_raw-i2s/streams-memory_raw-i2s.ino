@@ -1,11 +1,12 @@
 /**
  * @file streams-memory_raw-i2s.ino
  * @author Phil Schatzmann
- * @brief Compile with Partition Scheme Hughe APP!
- * @version 0.1
- * @date 2021-01-24
+ * @modifier Seeed Studio
+ * @brief Playing Audio Using Flash Memory
+ * @version 1.0
+ * @date 2024-06-28
  * 
- * @copyright Copyright (c) 2021
+ * @copyright Copyright (c) 2024
  * 
  */
 #include "AudioTools.h"

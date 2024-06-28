@@ -1,3 +1,13 @@
+/**
+ * @file i2s_rgb.ino
+ * @author Seeed Studio
+ * @brief Making a music spectrometer
+ * @version 1.0
+ * @date 2024-06-28
+ *
+ * @copyright Copyright (c) 2024
+ */
+
 #include <ESP_I2S.h>
 #include <wav_header.h>
 #include <Adafruit_NeoPixel.h>
@@ -38,31 +48,31 @@ void loop() {
   uint32_t sum = 0;
   int count = 0;
 
-  // 从I2S读取音频数据
+  // Reading audio data from I2S
   for (int i = 0; i < 1024; i++) {
     sample_read = I2S.read();
     if (sample_read != 0 && sample_read != 0xFFFF){
-      sum += abs(sample_read);  // 计算绝对值求和
+      sum += abs(sample_read);  // Calculating Absolute Value Sums
       count++;
     }
   }
 
-  int average = sum / count;  // 计算平均强度
+  int average = sum / count;    // Calculation of average intensity
   Serial.println(average);
 
-  int activeLEDs = map(average, 30000, 36000, 0, NUMPIXELS);  // 将平均值映射到LED数量，要映射的数值，value 当前的范围，value 映射后的目标范围
+  int activeLEDs = map(average, 30000, 36000, 0, NUMPIXELS);  // Mapping average to LED quantity, value to map, value current range, value target range after mapping
 
-  // 更新LED灯条亮度和颜色
+  // Update LED strip brightness and colour
   for (int i = 0; i < NUMPIXELS; i++) {
     if (i < activeLEDs) {
-      // 根据LED位置设置颜色
+      // Setting the colour according to the LED position
       int colorIntensity = map(i, 0, NUMPIXELS - 1, 0, 255);
-      strip.setPixelColor(i, strip.Color(0, colorIntensity, 255 - colorIntensity));  // 从蓝色到绿色的过渡
+      strip.setPixelColor(i, strip.Color(0, colorIntensity, 255 - colorIntensity));  // Transition from blue to green
     } else {
-      strip.setPixelColor(i, strip.Color(0, 0, 0));  // 关闭未激活的LED
+      strip.setPixelColor(i, strip.Color(0, 0, 0));  // Switching off inactive LEDs
     }
   }
   strip.show();
 
-  delay(100); // 稍作延迟
+  delay(100);
 }

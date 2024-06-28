@@ -3,9 +3,9 @@
  * @author Phil Schatzmann
  * @brief Sending encoded audio over ESPNow
  * @version 0.1
- * @date 2022-03-09
+ * @date 2024-06-28
  *
- * @copyright Copyright (c) 2022
+ * @copyright Copyright (c) 2024
  */
 
 #include "AudioTools.h"

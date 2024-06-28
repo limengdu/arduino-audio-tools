@@ -21,7 +21,7 @@ This project demonstrates how to use the reSpeaker Lite board, which includes an
    - reSpeaker Lite library (modified version of AudioTools library, provided with the project)
    - CodecSBC library (modified version of arduino-libsbc library, provided with the project)
 
-3. Open the `example-serial-receive.ino` sketch in the Arduino IDE.
+3. Open the `communication-codec-espnow-receive.ino` sketch in the Arduino IDE.
 
 4. Modify the following line in the sketch to match the MAC address of the sender device:
 

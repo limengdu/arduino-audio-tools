@@ -1,9 +1,8 @@
  /**
  * @file streams-i2s-serial.ino
  * @author Phil Schatzmann
- * @brief see https://github.com/pschatzmann/arduino-audio-tools/blob/main/examples/examples-stream/streams-i2s-serial/README.md
- * 
- * @author Phil Schatzmann
+ * @modifier Seeed Studio
+ * @brief Plotting the waveform of a recorded sound from the I2S.
  * @copyright GPLv3
  */
 

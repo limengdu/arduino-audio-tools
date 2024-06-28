@@ -1,8 +1,8 @@
 /**
  * @file player-spiffs-i2s.ino
  * @brief example using the SPIFFS library
- * 
  * @author Phil Schatzmann
+ * @modifier Seeed Studio
  * @copyright GPLv3
  */
 

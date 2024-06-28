@@ -1,3 +1,13 @@
+/**
+ * @file i2s_test.ino
+ * @author Seeed Studio
+ * @brief Test that reSpeaker Lite is working properly.
+ * @version 1.0
+ * @date 2024-06-28
+ *
+ * @copyright Copyright (c) 2024
+ */
+
 #include <ESP_I2S.h>
 #include <wav_header.h>
 

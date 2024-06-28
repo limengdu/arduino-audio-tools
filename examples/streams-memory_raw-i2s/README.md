@@ -1,35 +1,62 @@
-# Digital output via I2S to a external DAC
+# Star Wars Theme Player with reSpeaker Lite
 
-Somtimes we want to store the sound file in memory. [Audacity](https://www.audacityteam.org/) might help you out here: export with the file name audio.raw as RAW signed 16 bit PCM and copy it to the SD card. In the example I was just using one channel to save memory!.
+This project demonstrates how to play the Star Wars theme song using the reSpeaker Lite board. The reSpeaker Lite is an audio board with an integrated XIAO ESP32S3 microcontroller, featuring a dual-channel microphone and speaker. The project utilizes the reSpeaker Lite library, which is built on top of the AudioTools framework, to output the audio through the I2S interface.
 
-Then you can convert the file with xxd into a C file that contains the data in an array. In the Sketch I am using the __MemoryStream class__ which turns the array into a Stream. 
+## Features
 
-Please note that you must compile this sketch with the __Partition Scheme: Huge App__!
+- Plays the Star Wars theme song stored in memory
+- Utilizes the I2S interface for audio output
+- Employs the AudioTools framework for audio processing and streaming
+- Easy-to-use AudioLogger for debugging and monitoring
 
+## Hardware Requirements
 
-### External DAC:
+- reSpeaker Lite board (with integrated XIAO ESP32S3 microcontroller)
+- USB cable for power and programming
 
-![DAC](https://pschatzmann.github.io/Resources/img/dac.jpeg)
+## Software Requirements
 
-For my tests I am using the 24-bit PCM5102 PCM5102A Stereo DAC Digital-to-analog Converter PLL Voice Module pHAT
+- Arduino IDE
+- ESP32 Arduino Core
+- [reSpeaker Lite library](https://github.com/limengdu/reSpeaker_Lite-Arduino-Library.git)
 
-I am just using the default pins defined by the framework. However I could change them with the help of the config object. The mute pin can be defined in the constructor of the I2SStream - by not defining anything we use the default which is GPIO23
+## Getting Started
 
- 
-DAC  |	ESP32
------|----------------
-VCC  |	5V
-GND  |	GND
-BCK  |	BCK (GPIO14)
-DIN  |	OUT (GPIO22)
-LCK  |	BCK (GPIO15)
-FMT  |	GND
-XMT  |	3V (or another GPIO PIN which is set to high)
+### Installation
 
-- DMP - De-emphasis control for 44.1kHz sampling rate(1): Off (Low) / On (High)
-- FLT - Filter select : Normal latency (Low) / Low latency (High)
-- SCL - System clock input (probably SCL on your board).
-- FMT - Audio format selection : I2S (Low) / Left justified (High)
-- XMT - Soft mute control(1): Soft mute (Low) / soft un-mute (High)
+1. Install the ESP32 Arduino Core in the Arduino IDE by following the instructions provided by Espressif.
 
+### Wiring
+
+1. Connect the reSpeaker Lite board to your computer using a USB cable.
+
+### Uploading the Sketch
+
+1. Open the `stream-memory_raw-i2s.ino` sketch in the Arduino IDE.
+
+2. Select the appropriate board and port in the Arduino IDE.
+
+3. Upload the sketch to your reSpeaker Lite board.
+
+4. The Star Wars theme song will start playing automatically.
+
+## Configuration
+
+- `info`: Defines the audio configuration, including the sample rate (22050 Hz), number of channels (1 for mono), and the number of bits per sample (16 bits).
+
+- `i2s`: Creates an instance of the `I2SStream` class to output audio through the I2S interface.
+
+- `music`: Creates a `MemoryStream` object to store the Star Wars theme song data in memory.
+
+- `copier`: Creates a `StreamCopy` object to copy the audio data from the memory stream to the I2S stream.
+
+## Customization
+
+- You can replace the `StarWars30_raw` and `StarWars30_raw_len` variables with your own audio data to play a different song or sound effect.
+
+- The audio configuration can be modified by adjusting the parameters of the `AudioInfo` object, such as the sample rate, number of channels, and number of bits per sample.
+
+## License
+
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for more information.
 

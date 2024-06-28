@@ -22,7 +22,7 @@ This project demonstrates how to use the reSpeaker Lite board, which includes an
    - ArduinoMqttClient library (can be installed via the Library Manager)
    - reSpeaker Lite library (modified version of AudioTools library, provided with the project)
 
-3. Open the `reSpeaker_MQTT_Audio.ino` sketch in the Arduino IDE.
+3. Open the `communication-mqtt-send.ino` sketch in the Arduino IDE.
 
 4. Modify the following lines in the sketch to match your WiFi and MQTT broker settings:
 
