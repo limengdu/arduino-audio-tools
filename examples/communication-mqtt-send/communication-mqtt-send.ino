@@ -1,13 +1,13 @@
 /**
  * @file communication-mqtt-send.ino
- * @author Phil Schatzmann
+ * @author Seeed Studio
  * @brief Send Audio File to MQTT.
  * I am using the ArduinoMQTTClient library from Arduino provided by the library manager.
  * We can just copy the audio data to the MQTT client!
- * @version 0.1
- * @date 2023-09-07
+ * @version 1.0
+ * @date 2024-06-28
  * 
- * @copyright Copyright (c) 2023
+ * @copyright Copyright (c) 2024
  */
 
 #include "WiFi.h"

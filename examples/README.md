@@ -1,2 +1,2 @@
 
-see [Wiki](https://github.com/pschatzmann/arduino-audio-tools/wiki/Examples)
+see [Wiki](https://wiki.seeedstudio.com/reSpeaker_lite_introduction/)

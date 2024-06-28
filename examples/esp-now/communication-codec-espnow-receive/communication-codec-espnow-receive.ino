@@ -2,10 +2,10 @@
  * @file example-serial-receive.ino
  * @author Phil Schatzmann
  * @brief Receiving audio via ESPNow and decoding data to I2S 
- * @version 0.1
- * @date 2022-03-09
+ * @version 1.0
+ * @date 2024.06.28
  * 
- * @copyright Copyright (c) 2022
+ * @copyright Copyright (c) 2024
  */
 
 #include "AudioTools.h"
